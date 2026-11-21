@@ -1,36 +1,123 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<style>
-			h1 {text-align: center;}
-			p {text-align: center;}
-			div {text-align: center;}
-			img {
-				display: block;
-				margin-left: auto;
-				margin-right: auto;
-			}
-a:hover {
-  color: #EE82EE; /* A playful violet for link hover */
+<head>
+<meta charset="utf-8">
+<title>emily szpiro</title>
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<style>
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.button:hover {
-    color: white; /* White text on button hover */
+body {
+    min-height: 100vh;
+    font-family: "Times New Roman", serif;
 }
-		</style>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Emily Szpiro</title>
-	</head>
-	<body>
-		<br>
-		<h1><i><a href="https://emilyszpiro.humspace.ucla.edu/uncategorized/a-long-poem/" style="text-decoration:none">emily szpiro</a></i></h1>
-		<img src="https://imageio.forbes.com/specials-images/imageserve/68910d20423822f441887eba/Jade-of-the-Lofi-Girl-YouTube-channel--art-by-Juan-Pablo-Machado-/0x0.jpg?format=jpg&width=1440" style="width:50%;">
-<a href="//24timezones.com/Los-Angeles/time" style="text-decoration: none" class="clock24" id="tz24-1709065782-c1137-eyJob3VydHlwZSI6MTIsInNob3dkYXRlIjoiMCIsInNob3dzZWNvbmRzIjoiMSIsInNob3d0aW1lem9uZSI6IjEiLCJ0eXBlIjoiZCIsImxhbmciOiJlbiJ9" title="World Time :: Los Angeles" target="_blank" rel="noopener">time in los angeles</a>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
-		<center><a href="https://emilyszpiro.humspace.ucla.edu/about/">about</a> // <a href="https://emilyszpiro.humspace.ucla.edu/works/">works</a> // <a href="https://emilyszpiro.humspace.ucla.edu/wp-content/uploads/2024/08/CV-2024.pdf" target="blank" rel="noopener">cv</a> // <a href="https://emilyszpiro.humspace.ucla.edu/reading-list/">reading list<a/></center>
-<br>
 
-		
-	</body>
+#main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#timezone {
+    font-size: 18px;
+}
+
+#contact {
+    position: fixed;
+    right: 16px;
+    bottom: 12px;
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+    line-height: 1.35;
+}
+
+#contact .address {
+    margin-top: 8px;
+}
+</style>
+
+<script>
+const formatter = new Intl.DateTimeFormat([], {
+    timeZone: "US/Mountain",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    timeZoneName: "short"
+});
+
+function updateTime() {
+    const parts = formatter.formatToParts(new Date());
+
+    document.getElementById("time").textContent =
+        parts
+            .filter(part => part.type !== "timeZoneName")
+            .map(part => part.value)
+            .join("");
+
+    document.getElementById("tz").textContent =
+        parts.find(part => part.type === "timeZoneName").value;
+}
+
+window.onload = () => {
+    updateTime();
+    setInterval(updateTime, 1000);
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="main">
+    <div>
+
+        <font size="12"><i><b>「emily szpiro」</b></i></font>
+
+        <br><br>
+
+        <img src="banner.gif" style="width:560px;" alt="u of u">
+
+        <br><br>
+
+        <span id="timezone">
+            <i>
+                TIME IN SALT LAKE CITY -
+                <span id="time">0:00 PM</span>
+                <span id="tz">MST</span>
+            </i>
+        </span>
+
+        <br><br>
+
+        <a href="http://jvscholz.com/about.html">about</a> //
+        <a href="https://bloggyddoggy.com">blog</a> //
+        <a href="https://www.youtube.com/@jamesscholz">youtube</a> //
+        <a href="https://github.com/jvscholz">github</a> //
+        <a href="https://www.imdb.com/name/nm16046186/">imdb</a>
+
+    </div>
+</div>
+
+<div id="contact">
+    <div>jvscholz[at]gmail.com</div>
+
+    <div class="address">
+        po box 13024<br>
+        los angeles, ca 90013<br>
+        usa
+    </div>
+</div>
+
+</body>
 </html>
