@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+body {
+	margin: 0;
+}
+
+.image-grid {
+	--gap: 16px;
+	--num-cols: 4;
+	--row-height: 600px;
+
+	box-sizing: border-box;
+	padding: var(--gap);
+	
+	display: grid;
+	grid-template-columns: repeat(var(--num-cols), 1fr);
+	grid-auto-rows: var(--row-height);
+	gap: var(--gap);
+}
+
+.image-grid > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.image-grid-col-2 {
+	grid-column: span 2;
+}
+
+.image-grid-row-2 {
+	grid-row: span 2;
+}
+
+@media screen and (max-width: 1024px) {
+	.image-grid {
+		--num-cols: 2;
+		--row-height: 600px;
+	}
+}
+
+#logo-holder {position:relative; width:400px; height:600px;}
+#logo-holder .image,
+#logo-holder .text {transition: opacity 0.5s ease-in-out;}
+#logo-holder .text {position:absolute; top:50%; left:50%; opacity:0; -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  line-height: 100%;}
+#logo-holder:hover .image {opacity:0;}
+#logo-holder:hover .text {opacity:1;}
+</style>
+<title>Works</title>
+<div class="image-grid">
+	<div id="logo-holder">
+    	<a href="https://emilyszpiro.humspace.ucla.edu/wp-content/uploads/2024/02/MA-thesis.pdf" target="blank" rel="noopener"><img src="logos/mcgill.png" class="image" /></a>
+    	<a href="https://emilyszpiro.humspace.ucla.edu/wp-content/uploads/2024/02/MA-thesis.pdf" target="blank" rel="noopener"><div class="text">Ecological Interventions: The <i>Künstlerroman</i> in H.D.'s <i>Madrigal Cycle</i></div>
+	</div>
+	<div id="logo-holder">
+    	<a href="https://issuu.com/yolandayzhang/docs/samizdat-winter-2018-final-for-web-/78" target="blank" rel="noopener"><img src="logos/Samizdat.png" class="image" /></a>
+    	<a href="https://issuu.com/yolandayzhang/docs/samizdat-winter-2018-final-for-web-/78" target="blank" rel="noopener"><div class="text">"Tragedies of Mistiming": Generic Subversion and the Need for Change in Eugene Onegin and The Stone Guest</div>
+	</div>
+	<div id="logo-holder">
+    	<a href="https://emilyszpiro.humspace.ucla.edu/wp-content/uploads/2024/02/QUEUC-Final-Online-Version.pdf#page=133" target="blank" rel="noopener"><img src="logos/QUEUC.png" class="image" /></a>
+    	<a href="https://emilyszpiro.humspace.ucla.edu/wp-content/uploads/2024/02/QUEUC-Final-Online-Version.pdf#page=133" target="blank" rel="noopener"><div class="text">Unweaving the Rainbow: Fatal Rationality in "Lamia" and "The Fairy of the Fountains"</div>
+	</div>
+	<div id="logo-holder">
+    	<a href="https://issuu.com/scrivenercreativereview/docs/scr_43_-_issuu/6" target="blank" rel="noopener"><img src="logos/scrivener.png" class="image" /></a>
+    	<a href="https://issuu.com/scrivenercreativereview/docs/scr_43_-_issuu/6" target="blank" rel="noopener"><div class="text">Pygmalia</div>
+	</div>
+	<div id="logo-holder">
+   	<a href="https://issuu.com/vegmag/docs/thevegwinter2017/10" target="blank" rel="noopener"><img src="logos/theveg.png" class="image" /></a>
+    	<a href="https://issuu.com/vegmag/docs/thevegwinter2017/10" target="blank" rel="noopener"><div class="text">Stranding</div>
+	</div>
+	<div id="logo-holder">
+    	<a href="https://www.mcgill.ca/morsl/files/morsl/65._hunger_-_holiday_2016_0.pdf#page=5" target="blank" rel="noopener"><img src="logos/radix.png" class="image" /></a>
+    	<a href="https://www.mcgill.ca/morsl/files/morsl/65._hunger_-_holiday_2016_0.pdf#page=5" target="blank" rel="noopener"><div class="text">Hungry Like the Wolf</div>
+	</div>
+	<div id="logo-holder">
+    	<a href="https://issuu.com/vegmag/docs/thevegwinter2016/40" target="blank" rel="noopener"><img src="logos/theveg2.png" class="image" /></a>
+    	<a href="https://issuu.com/vegmag/docs/thevegwinter2016/40" target="blank" rel="noopener"><div class="text">Two Wise Men</div>
+	</div>
+</div>
+</html>
